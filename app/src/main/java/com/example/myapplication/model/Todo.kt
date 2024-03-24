@@ -4,13 +4,12 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import  retrofit2.http.GET
 
-const val BASE_URL="https://jsonplaceholder.typicode.com/todos"
+const val BASE_URL="https://jsonplaceholder.typicode.com/"
 
 interface  TodosApi{
     @GET("todos")
     suspend fun getTodos(): List<Todo>
 
-    annotation class GET(val value: String)
 
     companion object{
         var todoService: TodosApi?=null
